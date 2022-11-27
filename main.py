@@ -12,7 +12,7 @@ red_1 = np.array([0, 50, 180])
 red_2 = np.array([10, 255, 255])
 
 
-data_read = cv.imread("trial_2.jpeg")
+data_read = cv.imread("trial_10.jpeg")
 data_read = cv.resize(data_read, (510, 510))
 image = cv.cvtColor(data_read, cv.COLOR_BGR2RGB)
 hsv_mode = cv.cvtColor(data_read, cv.COLOR_BGR2HSV)
