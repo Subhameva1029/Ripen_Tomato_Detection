@@ -1,6 +1,10 @@
 import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
+import matplotlib
+from platform import python_version
+import pylab
+import sys
 
 
 red_1 = np.array([0, 50, 180])
@@ -8,7 +12,7 @@ red_1 = np.array([0, 50, 180])
 red_2 = np.array([10, 255, 255])
 
 
-data_read = cv.imread("trial_2.jpeg")
+data_read = cv.imread("trial_10.jpeg")
 data_read = cv.resize(data_read, (510, 510))
 image = cv.cvtColor(data_read, cv.COLOR_BGR2RGB)
 hsv_mode = cv.cvtColor(data_read, cv.COLOR_BGR2HSV)
@@ -49,9 +53,16 @@ for i in range(2):
 
     plt.subplot(1, 2, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
+    win_title = pylab.gcf()
+    win_title.canvas.manager.set_window_title('Running Test....')
     plt.xticks([]),plt.yticks([])
 
 
 
 print(f'{127803:^20c}')
+print("OpenCv version : ", cv.__version__)
+print("Matplotlib version : ", matplotlib.__version__)
+print("numpy version : ", np.__version__)
+print("Python version : ", python_version())
+print("Current User version : ", sys.version)
 plt.show()
