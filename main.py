@@ -54,6 +54,7 @@ for i in range(2):
     plt.subplot(1, 2, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     win_title = pylab.gcf()
+    win_title.canvas.manager.set_window_title('Running Test....')
     plt.xticks([]),plt.yticks([])
 
 
