@@ -1,6 +1,10 @@
 import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
+import matplotlib
+from platform import python_version
+import pylab
+import sys
 
 
 red_1 = np.array([0, 50, 180])
@@ -49,9 +53,15 @@ for i in range(2):
 
     plt.subplot(1, 2, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
+    win_title = pylab.gcf()
     plt.xticks([]),plt.yticks([])
 
 
 
 print(f'{127803:^20c}')
+print("OpenCv version : ", cv.__version__)
+print("Matplotlib version : ", matplotlib.__version__)
+print("numpy version : ", np.__version__)
+print("Python version : ", python_version())
+print("Current User version : ", sys.version)
 plt.show()
